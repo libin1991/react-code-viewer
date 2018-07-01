@@ -111,8 +111,8 @@ yarn lint -- --fix
 
 <!-- badges -->
 
-[build-badge]: https://img.shields.io/circleci/project/github/satya164/react-code-viewer/master.svg?style=flat-square
-[build]: https://circleci.com/gh/satya164/react-code-viewer
+[build-badge]: https://img.shields.io/circleci/project/github/rjoydip/react-code-viewer/master.svg?style=flat-square
+[build]: https://circleci.com/gh/rjoydip/react-code-viewer
 [license-badge]: https://img.shields.io/npm/l/react-code-viewer.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
 [version-badge]: https://img.shields.io/npm/v/react-code-viewer.svg?style=flat-square
