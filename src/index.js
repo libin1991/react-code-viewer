@@ -19,6 +19,7 @@ type State = {
   value: string,
   html: string,
   capture: boolean,
+  readonly: boolean,
 };
 
 type Record = {
@@ -68,7 +69,8 @@ export default class Viewer extends React.Component<Props, State> {
     value: this.props.value,
     html: this.props.highlight(this.props.value),
     capture: true,
-    displayClippy: false,
+    displayClippy: true,
+    readOnly: this.props.readOnly,
   };
 
   componentDidMount() {
@@ -423,6 +425,7 @@ export default class Viewer extends React.Component<Props, State> {
       highlight,
       tabSize,
       insertSpaces,
+      readOnly,
       /* eslint-enable no-unused-vars */
       ...rest
     } = this.props;
@@ -456,6 +459,7 @@ export default class Viewer extends React.Component<Props, State> {
           autoCorrect="off"
           spellCheck={false}
           data-gramm={false}
+          readOnly={readOnly}
         />
         <div onClick={() => this._copy(value)}>
           <img
@@ -527,5 +531,6 @@ const styles = {
     width: '14px',
     display: 'block',
     float: 'right',
+    cursor: 'pointer',
   },
 };
