@@ -1,9 +1,5 @@
 # react-code-view
 
-[![Build Status][build-badge]][build]
-[![MIT License][license-badge]][license]
-[![Version][version-badge]][package]
-
 Simple no-frills code editor with syntax highlighting.
 
 <a href="https://raw.githubusercontent.com/rjoydip/react-code-viewer/master/demo/demo.gif"><img src="https://raw.githubusercontent.com/rjoydip/react-code-viewer/master/demo/demo.gif" width="400"></a>
@@ -108,11 +104,3 @@ To fix formatting errors, run the following:
 ```sh
 yarn lint -- --fix
 ```
-
-<!-- badges -->
-
-[build-badge]: https://img.shields.io/circleci/project/github/rjoydip/react-code-viewer/master.svg?style=flat-square
-[build]: https://circleci.com/gh/rjoydip/react-code-viewer
-[license-badge]: https://img.shields.io/npm/l/react-code-viewer.svg?style=flat-square
-[license]: https://opensource.org/licenses/MIT
-[version-badge]: https://img.shields.io/npm/v/react-code-viewer.svg?style=flat-square
