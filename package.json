@@ -1,0 +1,54 @@
+{
+  "name": "react-code-viewer",
+  "version": "1.0.0",
+  "description": "Simple no-frills code viewer with syntax highlighting",
+  "keywords": [
+    "code",
+    "editor",
+    "react",
+    "viewer"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "flow": "flow",
+    "build": "babel src --out-dir lib --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
+    "prebuild": "del lib/",
+    "prepare": "yarn build",
+    "example": "parcel example/index.html",
+    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && rm -rf dist/ && parcel build example/App.js && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master",
+    "precommit": "yarn lint && yarn flow"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjoydip/react-code-viewer.git"
+  },
+  "author": "Joydip Roy <joydipand@gmail.com> (https://github.com/rjoydip)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "dedent": "^0.7.0",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-satya164": "^1.0.2",
+    "flow-bin": "^0.75.0",
+    "flow-copy-source": "^2.0.0",
+    "husky": "^0.14.3",
+    "parcel-bundler": "^1.9.2",
+    "prettier": "^1.13.5",
+    "prismjs": "^1.15.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}

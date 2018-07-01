@@ -1,0 +1,65 @@
+/* @flow */
+/* global require */
+/* eslint-disable import/no-commonjs */
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Viewer from '../src/index';
+import dedent from 'dedent';
+import { highlight, languages } from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-markup';
+import './styles.css';
+
+// import doesn't seem to work properly with parcel for jsx
+require('prismjs/components/prism-jsx');
+
+type State = {
+  code: string,
+};
+
+class App extends React.Component<{}, State> {
+  state = {
+    code: dedent`
+    import React from "react";
+    import ReactDOM from "react-dom";
+
+    function App() {
+      return (
+        <h1>Hello world</h1>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+    `,
+  };
+
+  render() {
+    return (
+      <main className="container">
+        <div className="container__content">
+          <h1>react-code-viewer</h1>
+          <p>A simple no-frills viewer editor with syntax highlighting.</p>
+          <a
+            className="button"
+            href="https://github.com/rjoydip/react-code-viewer"
+          >
+            GitHub
+          </a>
+          <Viewer
+            value={this.state.code}
+            onValueChange={code => this.setState({ code })}
+            highlight={code => highlight(code, languages.jsx)}
+            padding={10}
+            className="container__editor"
+            readOnly
+          />
+        </div>
+      </main>
+    );
+  }
+}
+
+/* $FlowFixMe */
+ReactDOM.render(<App />, document.getElementById('root'));
