@@ -14,6 +14,7 @@ Several browser based code editors such as Ace, CodeMirror, Monaco etc. provide 
 - Tab key support with customizable indentation
 - Automatic indent on new lines
 - Undo whole words instead of letter by letter
+- Read only property
 - Copy to clipboard
 
 ## Installation
