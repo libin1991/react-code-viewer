@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "flow": "flow",
-    "build": "babel src --out-dir lib --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
+    "build": "babel src --out-dir lib --copy-files --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
     "prepare": "yarn build",
     "example": "parcel example/index.html",
     "deploy": "git checkout -b gh-pages && rm -rf dist/ && yarn build && git add -f dist/ && git commit -m \"Publish website\" && git push -fu origin gh-pages && git checkout master && git branch -D gh-pages",
