@@ -1,12 +1,8 @@
 # react-code-view
 
-Simple no-frills code editor with syntax highlighting.
+Simple code viewer with syntax highlighting.
 
 <a href="https://raw.githubusercontent.com/rjoydip/react-code-viewer/master/demo/demo.gif"><img src="https://raw.githubusercontent.com/rjoydip/react-code-viewer/master/demo/demo.gif" width="400"></a>
-
-## Why
-
-Several browser based code editors such as Ace, CodeMirror, Monaco etc. provide the ability to embed a full-featured code editor in your web page. However, if you just need a simple editor with syntax highlighting without any of the extra features, they can be overkill as they don't usually have a small bundle size footprint. This library aims to provide a simple code editor with syntax highlighting support without any of the extra features, perfect for simple embeds and forms where users can submit code.
 
 ## Features
 
@@ -25,7 +21,7 @@ npm install react-code-viewer
 
 ## Usage
 
-You need to use the editor with a third party library which provides syntax highlighting. For example, it'll look like following with [`prismjs`](https://prismjs.com):
+You need to use the code viewer with a third party library which provides syntax highlighting. For example, it'll look like following with [`prismjs`](https://prismjs.com):
 
 ```js
 import React from 'react';
@@ -105,3 +101,5 @@ To fix formatting errors, run the following:
 ```sh
 yarn lint -- --fix
 ```
+
+This project codebase has been taken from [react-simple-code-editor](https://github.com/satya164/react-simple-code-editor)

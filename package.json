@@ -13,9 +13,10 @@
     "flow": "flow",
     "build": "babel src --out-dir lib --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
     "prepare": "yarn build",
-    "example": "parcel example/index.html --no-source-maps",
+    "example": "parcel example/index.html",
     "deploy": "git checkout -b gh-pages && rm -rf dist/ && parcel build example/App.js --no-source-maps && git add -f dist/ && git commit -m \"Publish website\" && git push -fu origin gh-pages && git checkout master && git branch -D gh-pages",
-    "precommit": "yarn lint && yarn flow"
+    "precommit": "yarn lint && yarn flow",
+    "prepush": "yarn lint && yarn flow && yarn prepare"
   },
   "main": "lib/index.js",
   "files": [

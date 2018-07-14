@@ -3,7 +3,7 @@
 /* eslint-disable react/no-danger, react/sort-comp */
 
 import React from 'react';
-import clippySvg from '../clippy.svg';
+import clippySvg from './assets/clippy.svg';
 
 type Props = {
   value: string,

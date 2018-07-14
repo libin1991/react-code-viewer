@@ -42,7 +42,7 @@ class App extends React.Component<{}, State> {
       <main className="container">
         <div className="container__content">
           <h1>react-code-viewer</h1>
-          <p>A simple no-frills viewer editor with syntax highlighting.</p>
+          <p>A simple code viewer with syntax highlighting.</p>
           <a
             className="button"
             href="https://github.com/rjoydip/react-code-viewer"
