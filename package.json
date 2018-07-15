@@ -12,9 +12,10 @@
     "lint": "eslint .",
     "flow": "flow",
     "build": "babel src --out-dir lib --copy-files --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
+    "dist": "babel src --out-dir dist --copy-files --ignore '**/__tests__/**' && flow-copy-source -i '**/__tests__/**' src lib",
     "prepare": "yarn build",
     "example": "parcel example/index.html",
-    "deploy": "git checkout -b gh-pages && rm -rf dist/ && yarn build && git add -f dist/ && git commit -m \"Publish website\" && git push -fu origin gh-pages && git checkout master && git branch -D gh-pages",
+    "deploy": "git checkout -b gh-pages && rm -rf dist/ && yarn run dist && git add -f dist/ && git commit -m \"Publish website\" && git push -fu origin gh-pages && git checkout master && git branch -D gh-pages",
     "precommit": "yarn lint && yarn flow",
     "prepush": "yarn lint && yarn flow && yarn prepare"
   },
